@@ -1,4 +1,5 @@
 use std::{fs::File, io::Read};
+use std::cmp::min;
 
 use rand::Rng;
 use sdl2::event::Event;
@@ -270,8 +271,8 @@ impl Cpu {
                         // println!("xPos + col: {}", (x_pos as u16 + col) as usize);
                         // println!("(y_pos as u16 + row) as usize * VIDEO_WIDTH: {}", (y_pos as u16 + row) as usize * VIDEO_WIDTH);
 
-                        let idx: usize = (y_pos as u16 + row) as usize * VIDEO_WIDTH
-                            + (x_pos as u16 + col) as usize;
+                        let idx: usize = min((y_pos as u16 + row) as usize * VIDEO_WIDTH
+                            + (x_pos as u16 + col) as usize, 2047);
                         // println!("Index: {}", idx);
                         let screen_pixel = self.video[idx];
                         if sprite_pixel != 0 {
@@ -529,10 +530,6 @@ impl Cpu {
         }
 
         result
-    }
-
-    fn safe_add(lhs: u8, rhs: u8) -> u8 {
-        ((lhs as u32 + rhs as u32) & 0x00FF) as u8
     }
 
     fn safe_subtract(lhs: u8, rhs: u8) -> u8 {

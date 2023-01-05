@@ -1,11 +1,7 @@
 use crate::cpu::Cpu;
 use sdl2::pixels::PixelFormatEnum;
-use std::{env, mem::size_of};
+use std::env;
 use std::time::{Duration, SystemTime, UNIX_EPOCH};
-use sdl2::event::Event;
-use sdl2::keyboard::Keycode;
-use sdl2::rect::Rect;
-
 mod cpu;
 
 const VIDEO_WIDTH: usize = 64;
@@ -82,8 +78,4 @@ fn main() -> Result<(), String> {
         }
     }
     Ok(())
-}
-
-fn process_input(keypad: &[u8; 16]) -> bool {
-    false
 }
