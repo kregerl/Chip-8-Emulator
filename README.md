@@ -1,6 +1,6 @@
 # Chip-8 Emulator
 
-This is a simple implementation of a [Chip-8](https://en.wikipedia.org/wiki/CHIP-8) emulator written in Rust, based on [Austin Morlan's](austinmorlan.com) Chip-8 emulator.
+This is a simple implementation of a [Chip-8](https://en.wikipedia.org/wiki/CHIP-8) emulator written in Rust, based on [Austin Morlan's](https://www.austinmorlan.com) Chip-8 emulator.
 
 ## Build
 The emulator is very easy to build as long as you have [cargo](https://www.rust-lang.org/tools/install) and [SDL2](https://www.libsdl.org/) installed.
